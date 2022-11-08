@@ -25,6 +25,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
+        protocol: ftp
         local-dir: build/
         server-dir: /home/asrez/public_html/test-react/
         server: asrez.com
