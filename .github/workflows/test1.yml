@@ -22,12 +22,17 @@ jobs:
     - name: List output files
       run: find build/ -print
       
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    - name: FTP Deployer
+      uses: sand4rt/ftp-deployer@v1.4
       with:
-        protocol: ftp
-        local-dir: build/
-        server-dir: /home/asrez/public_html/test-react/
-        server: asrez.com
+        sftp: true
+        host: asrez.com
+        port: 22
         username: asrez
         password: ${{ secrets.FTP_PASSWORD }}
+        remote_folder: '/home/asrez/public_html/test-react/'
+        local_folder: 'build/'
+        cleanup: false
+        include: '[ "*", "**/*" ]'
+        exclude: '["node_modules/**", "_secret.php", ".github/**", ".git/**", "*.env"]'
+        pasive: true
