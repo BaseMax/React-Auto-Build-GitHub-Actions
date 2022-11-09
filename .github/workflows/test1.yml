@@ -22,7 +22,7 @@ jobs:
       run: find build/ -print
       
     - name: FTP Deployer
-      uses: sand4rt/ftp-deployer@v1.5
+      uses: sand4rt/ftp-deployer@v1.4
       with:
         sftp: true
         host: asrez.com
@@ -34,3 +34,4 @@ jobs:
         cleanup: false
         include: '[ "*", "**/*" ]'
         exclude: '["node_modules/**", "_secret.php", ".github/**", ".git/**", "*.env"]'
+        pasive: true
