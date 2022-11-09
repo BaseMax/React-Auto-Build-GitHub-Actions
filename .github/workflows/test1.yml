@@ -33,5 +33,5 @@ jobs:
         local_folder: 'build/'
         cleanup: false
         include: '[ "*", "**/*" ]'
-        exclude: '["node_modules/**", "_secret.php", ".github/**", ".git/**", "*.env"]'
+        exclude: '["node_modules/**", ".github/**", ".git/**", "*.env"]'
         pasive: true
