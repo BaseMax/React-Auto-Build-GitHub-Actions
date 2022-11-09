@@ -34,4 +34,3 @@ jobs:
         cleanup: false
         include: '[ "*", "**/*" ]'
         exclude: '["node_modules/**", "_secret.php", ".github/**", ".git/**", "*.env"]'
-        pasive: true
